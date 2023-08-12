@@ -1,6 +1,6 @@
 #include<stdio.h>
 void main(){
-    int i, j, n, n1, n2, sum;
+    int i, j, target_num, n1, n2, sum;
     unsigned int dist, temp;
     int arr[10];
     printf("Enter 10 elements to perform operations :\n");
@@ -8,9 +8,9 @@ void main(){
         scanf("%d",&arr[i]);
     }
     printf("enter the target number : ");
-    scanf("%d",&n);
+    scanf("%d",&target_num);
     
-    dist = (arr[0]+arr[1])-n;
+    dist = (arr[0]+arr[1])-target_num;
     n1 = arr[0];
     n2 = arr[1];
     sum = n1 + n2;
@@ -18,7 +18,7 @@ void main(){
         for(j=1; j<10; j++){
             if(i==j)
                 continue;
-            temp = (arr[i]+arr[j])-n;
+            temp = (arr[i]+arr[j])-target_num;
             if(temp < dist){
                 dist = temp;
                 n1 = arr[i];
@@ -27,5 +27,5 @@ void main(){
             }
         }
     }
-    printf("The sum %d of elements %d and %d is closest to %d with distance %d", sum, n1, n2, n, dist);
+    printf("The sum %d of elements %d and %d is closest to %d with distance %d", sum, n1, n2, target_num, dist);
 }
